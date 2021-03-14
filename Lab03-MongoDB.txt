@@ -1,0 +1,54 @@
+use sliit
+
+
+ //q3                   
+db.students.insert({
+
+    name:"John",
+    dateOfBirth : "1990-01-15T00:00:00Z",
+    subjects:["Application frameworks","Computer architecture"],
+    
+});
+                    
+
+                    
+db.students.find({name:"John"}); //find document by name
+db.students.find({_id: ObjectId("6044d0d3687327342f4b9542")})
+
+//q6
+db.students.updateOne(
+{
+     name:"John"
+},{
+       $set:{subjects:["Application frameworks","Computer architecture","Distributed Computing"]}
+  }
+)
+
+//question 07
+db.students.insertOne({name:"Smith" ,
+                    dateOfBirth : "1990-01-15T00:00:00Z",
+                    subjects:["Application frameworks","Computer architecture"],
+                    isActive:true });
+                   
+db.students.insertOne({name:"Jane" ,
+                    dateOfBirth : "1990-02-15T00:00:00Z",
+                    subjects:["Application frameworks","Computer architecture"],
+                    isActive:false });
+                    
+                    
+
+db.students.find({name:"Smith" ,isActive : true})
+
+//08
+db.students.updateOne({
+     name:"John"
+    },{
+        $set:{isActive:false}
+        
+})
+
+//09
+db.students.remove({name:"John"})
+
+db.students.find()
+
