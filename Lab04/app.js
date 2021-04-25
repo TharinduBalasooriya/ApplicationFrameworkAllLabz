@@ -1,13 +1,13 @@
 //console.log('Hello world');
 
 //q2
-/*
+
 const os = require('os');
 
 console.log('Architecture ' + os.arch());
 console.log('CPUs ' + os.cpus().length);
 console.log('OS ' + os.platform());
-*/
+
 
 
 //const fs = require('fs');

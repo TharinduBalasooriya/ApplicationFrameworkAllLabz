@@ -1,0 +1,61 @@
+//Lab 01
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //q1
+    /*let fexp = function(){
+        console.log('Hello world');
+    }
+
+    function second(incomeF){
+        incomeF();
+    }
+
+    second(fexp);*/
+
+    //q2
+
+    //q3
+    var vehicleName= "Toyota";
+    function printVehicleName(){
+        console.log(vehicleName);
+    }
+    printVehicleName();
+
+    var vehicle = {
+        vehicleName : 'Nissan'
+        ,getVehicleName : printVehicleName
+    }
+    vehicle.getVehicleName();
+
+
+    //clousers
+
+    function taxCal(taxPrecentage){
+        return function (amount){
+            amount = amount - amount *taxPrecentage;
+            return amount;
+        }
+    }
+
+    var price = taxCal(0.1)(1000);
+    console.log(price);
+
+    var job = 'SWE';
+
+    function getJob(){
+        var job = 'Doctor'
+        console.log(job)
+    }
+    getJob();
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,45 @@
+use mid
+
+db.students.find({})
+db.students.insertOne({
+    "name":"John",
+     "dateOfBirth":"1990-01-01T00:00:00Z",
+     "subjects":["Application frameworks" , "Computer architecture"]
+
+})
+
+db.students.find({"name":"John"})
+db.students.find({})
+db.students.find({"_id":ObjectId("60633325ca30880aff717a79")})
+
+db.students.updateOne(
+{name:"John"}
+,{$push:{subjects:"Distributed Computing"}}
+)
+
+db.students.insertMany([
+    {
+        "name":"Smith",
+        "dateOfBirth":"1990-01-15T00:00:00Z",
+        "subjects":["Application frameworks", "Computer architecture"],
+        "isActive":true
+    
+    }
+    ,
+    {
+        "name":"Jane",
+        "dateOfBirth":"1990-02-15T00:00:00Z",
+        "subjects": ["Application frameworks", "Computer architecture"],
+        "isActive":false
+    }
+
+    ]
+)
+
+db.students.updateOne({name:"Smith",isActive:true},{$push:{subjects:" Distributed Computing"}})
+db.students.updateOne({name:"John"},{$set:{isActive:false}})
+
+db.students.deleteOne({name:"John"})
+
+
+
