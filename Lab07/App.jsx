@@ -1,16 +1,12 @@
 import React from 'react'
 import Posts from './Posts';
-const posts = [
- {
- id: 1,
- name: 'React',
- description: 'Best UI library'
- }, {
- id: 2,
- name: 'Node',
- description: 'Server side JS'
- }
-];
+import PostHolder from './PostHolder'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect
+} from "react-router-dom";
 
 
 export default class App extends React.Component{
@@ -23,9 +19,14 @@ export default class App extends React.Component{
     render(){
         return(
   
-                 <div>
-                     <Posts posts={posts}></Posts>
-                 </div>
+                <Router>
+                    <Switch>
+                        <Route exact path="/posts">
+                            <PostHolder></PostHolder>
+                        </Route>
+                        <Redirect to='/posts'></Redirect>
+                    </Switch>
+                </Router>
         );
     }
 }
