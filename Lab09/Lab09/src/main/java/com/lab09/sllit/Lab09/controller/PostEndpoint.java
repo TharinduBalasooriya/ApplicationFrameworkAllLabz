@@ -13,6 +13,7 @@ import java.util.List;
 @RequestMapping("/posts")
 public class PostEndpoint {
 
+
     private PostApi postApi;
 
     @Autowired
@@ -50,6 +51,7 @@ public class PostEndpoint {
 
     @PutMapping
     public Post UpdatePost(@RequestBody Post post){
+
         return  postApi.updatePost(post);
 
     }

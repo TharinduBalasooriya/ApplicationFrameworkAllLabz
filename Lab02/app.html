@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script >
+    /*function Vehicle(type){
+        this.type = type;
+        Vehicle.COUNT++;
+    }
+
+    Vehicle.prototype.print = function (){
+        console.log('Vehicle is driving')
+    }
+    Vehicle.COUNT = 0;
+    function Car(name,speed){
+        this.name = name;
+        this.speed = speed;
+
+        Vehicle.call(this,'CAR');
+
+    }
+
+    Car.prototype = Object.create(Vehicle.prototype);
+    Car.prototype.constructor = Car;
+    Car.prototype.balanceWheels = function (){
+        console.log('Wheels are balance');
+    }
+
+    let myCar = new Car('GTR',140);
+    myCar.print();
+    myCar.balanceWheels();
+    console.log(Vehicle.COUNT);*/
+
+
+    class Vehicle {
+        static COUNT = 0;
+        constructor(type) {
+            this.type = type;
+            Vehicle.COUNT++;
+        }
+
+        print(){
+            console.log(this.type +' Vehicel is driving');
+        }
+    }
+
+    class Car extends Vehicle{
+        constructor() {
+            super('CAR');
+        }
+        wheelBalance(){
+            console.log('Wheels are balance1')
+        }
+         get getType(){
+            return this.type;
+        }
+
+    }
+
+    let c = new Car();
+    console.log(c.getType);
+
+
+</script>
+</body>
+</html>
